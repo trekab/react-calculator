@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <h1>Hi, there!</h1>
+      <Display result="0"></Display>
       <Button name="New"></Button>
     </div>
   );
