@@ -1,17 +1,16 @@
 import React from 'react';
-import Button from './Button';
 import ButtonPanel from './ButtonPanel';
 import Display from './Display';
 import '../App.css';
 
-function App() {
+const app = () => {
   return (
     <div className="App">
-      <h1>Hi, there!</h1>
-      <Display result="0"></Display>
-      <Button name="New"></Button>
+      <h1>React Calculator</h1>
+      <Display></Display>
+      <ButtonPanel></ButtonPanel>
     </div>
   );
 }
 
-export default App;
+export default app;
