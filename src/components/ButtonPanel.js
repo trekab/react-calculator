@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './Button';
 
-const buttonPanel = () => (
+const ButtonPanel = () => (
   <div>
     <div>
       <Button name="AC" />
@@ -35,4 +35,4 @@ const buttonPanel = () => (
   </div>
 );
 
-export default buttonPanel;
+export default ButtonPanel;

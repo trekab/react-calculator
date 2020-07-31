@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const calcButton = props => (
-  <button type="submit">{props.name}</button>
+const CalcButton = ({ name }) => (
+  <button type="submit">{name}</button>
 );
 
-calcButton.propTypes = {
-  name: PropTypes.string,
+CalcButton.propTypes = {
+  name: PropTypes.string.isRequired,
 };
 
-export default calcButton;
+export default CalcButton;

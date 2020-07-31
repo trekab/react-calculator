@@ -3,7 +3,7 @@ import ButtonPanel from './ButtonPanel';
 import Display from './Display';
 import '../App.css';
 
-const app = () => (
+const App = () => (
   <div className="App">
     <h1>React Calculator</h1>
     <Display />
@@ -11,4 +11,4 @@ const app = () => (
   </div>
 );
 
-export default app;
+export default App;
