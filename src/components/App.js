@@ -5,7 +5,6 @@ import '../css/App.css';
 
 const App = () => (
   <div className="App">
-    <h1>React Calculator</h1>
     <Display />
     <ButtonPanel />
   </div>
