@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../css/Button.css'
 
-const CalcButton = ({ name }) => (
+const CalcButton = ({ name, color, wide }) => (
   <button className='Button' type="submit">{name}</button>
 );
 
