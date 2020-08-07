@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <div className="App">
         <Display result={this.state.total} />
-        <ButtonPanel onClick={this.handleClick} />
+        <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
   }
