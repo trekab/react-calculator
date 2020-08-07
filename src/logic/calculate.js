@@ -33,7 +33,7 @@ const calculate = (data, buttonName) => {
       total = operate(parseInt(total, 10), parseInt(next, 10), operation);
       break;
     case '%':
-      operation = '/';
+      operation = buttonName;
       total = operate(parseInt(total, 10), 100, operation);
       break;
     default:

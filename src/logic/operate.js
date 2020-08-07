@@ -1,4 +1,4 @@
-import Big from 'big-js';
+import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
   let result = null;
@@ -22,8 +22,11 @@ const operate = (numberOne, numberTwo, operation) => {
         result = (firstNumber.div(secondNumber)).toString();
       }
       break;
-    default:
+    case '%':
+      result = (firstNumber.mod(secondNumber)).toString();
       break;
+    default:
+      result = `Invalid operation: ${operation}`;
   }
   return result;
 };
