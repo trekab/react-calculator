@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ButtonPanel from './ButtonPanel';
 import Display from './Display';
-// eslint-disable-next-line no-unused-vars
 import calculate from '../logic/calculate';
 import '../css/App.css';
+import { render } from '@testing-library/react';
 
-const App = () => (
-  <div className="App">
-    <Display />
-    <ButtonPanel />
-  </div>
-);
+class App extends Component {
+  state = {
+    total: null,
+    next: null,
+    operation: null
+  };
+
+  render(){
+    return (
+      <div className="App">
+        <Display />
+        <ButtonPanel />
+      </div>
+    );
+  }
+}
 
 export default App;
