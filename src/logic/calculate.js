@@ -15,10 +15,15 @@ const calculate = (data, buttonName) => {
         total = operate(parseFloat(total, 10), -1, operation);
       }
       break;
+    case '%':
+      operation = '/';
+      if(total){
+        total = operate(parseFloat(total, 10), 100, operation);
+      }
+      break;
     case '/':
     case '+':
     case '*':
-    case '%':
     case '-':
       if (total) {
         if (next && operation) {

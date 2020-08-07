@@ -22,9 +22,6 @@ const operate = (numberOne, numberTwo, operation) => {
         result = (firstNumber.div(secondNumber)).toString();
       }
       break;
-    case '%':
-      result = (firstNumber.mod(secondNumber)).toString();
-      break;
     default:
       break;
   }
