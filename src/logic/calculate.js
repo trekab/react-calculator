@@ -16,7 +16,7 @@ const calculate = (data, buttonName) => {
       break;
     case '=':
       break;
-    case '*':
+    case '/':
       operation = buttonName;
       total = operate(parseInt(total, 10), parseInt(next, 10), operation);
       break;
@@ -32,12 +32,11 @@ const calculate = (data, buttonName) => {
       operation = buttonName;
       total = operate(parseInt(total, 10), parseInt(next, 10), operation);
       break;
+    case '%':
+      operation = '/';
+      total = operate(parseInt(total, 10), 100, operation);
+      break;
     default:
-      if (parseInt(buttonName, 10)) {
-        total = buttonName;
-      } else {
-        total = 'Not a number';
-      }
       break;
   }
 

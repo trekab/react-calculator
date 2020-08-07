@@ -15,7 +15,7 @@ const operate = (numberOne, numberTwo, operation) => {
     case '*':
       result = (firstNumber.times(secondNumber)).toString();
       break;
-    case '÷':
+    case '/':
       if (numberTwo === '0') {
         result = 'Division by zero is not possible.';
       } else {
@@ -23,7 +23,7 @@ const operate = (numberOne, numberTwo, operation) => {
       }
       break;
     default:
-      result = 'Error';
+      break;
   }
   return result;
 };
