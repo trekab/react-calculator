@@ -1,7 +1,7 @@
 import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
-  let result = null;
+  let result = '';
   const firstNumber = new Big(numberOne);
   const secondNumber = new Big(numberTwo);
 

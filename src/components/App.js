@@ -3,22 +3,19 @@ import ButtonPanel from './ButtonPanel';
 import Display from './Display';
 import calculate from '../logic/calculate';
 import '../css/App.css';
-import { render } from '@testing-library/react';
 
 class App extends Component {
-  state = {
-    total: null,
-    next: null,
-    operation: null
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      total: null,
+      next: null,
+      operation: null,
+    };
+  }
 
   handleClick = (buttonName) => {
-    const result = calculate(this.state, buttonName);
-    this.setState({
-      total: result.total,
-      next: result.next,
-      operation: result.operation
-    });
+    this.setState(calculate(this.state, buttonName));
   }
 
   render(){

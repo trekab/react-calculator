@@ -11,32 +11,59 @@ const calculate = (data, buttonName) => {
       break;
     case '+/-':
       operation = '*';
-      total = operate(parseInt(total, 10), -1, operation);
-      next = operate(parseInt(next, 10), -1, operation);
-      break;
-    case '=':
+      total = operate(parseFloat(total, 10), -1, operation);
       break;
     case '/':
-      operation = buttonName;
-      total = operate(parseInt(total, 10), parseInt(next, 10), operation);
-      break;
-    case '÷':
-      operation = buttonName;
-      total = operate(parseInt(total, 10), parseInt(next, 10), operation);
-      break;
     case '+':
-      operation = buttonName;
-      total = operate(parseInt(total, 10), parseInt(next, 10), operation);
-      break;
-    case '-':
-      operation = buttonName;
-      total = operate(parseInt(total, 10), parseInt(next, 10), operation);
-      break;
+    case '*':
     case '%':
-      operation = buttonName;
-      total = operate(parseInt(total, 10), 100, operation);
+    case '-':
+      if (total) {
+        if (next && operation) {
+          next = operate(parseFloat(next), parseFloat(total), operation);
+          total = null;
+        }
+        next = total;
+        total = null;
+        operation = buttonName;
+      } else {
+        total = null;
+        operation = buttonName;
+      }
+      break;
+    case '=':
+      if (!total) {
+        total = next;
+        next = null;
+        operation = buttonName;
+      } else if (!next) {
+        next = null;
+        operation = buttonName;
+      } else {
+        total = operate(parseFloat(next), total, operation);
+        next = null;
+        operation = null;
+      }
+      break;
+    case '0':
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+    case '9':
+    case '.':
+      if (total && total !== '0' && total !== 'Error'){
+        total += buttonName;
+      } else {
+        total = buttonName;
+      } 
       break;
     default:
+      total = 'Invalid';
       break;
   }
 
