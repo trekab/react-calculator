@@ -1,10 +1,9 @@
 import React from 'react';
-import Button from './Button';
 import PropTypes from 'prop-types';
+import Button from './Button';
 import '../css/ButtonPanel.css';
 
-
-const ButtonPanel = ({clickHandler}) => {
+const ButtonPanel = ({ clickHandler }) => {
   const handleClick = buttonName => clickHandler(buttonName);
 
   return (

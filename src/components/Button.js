@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../css/Button.css';
 
-const CalcButton = ({ name, color, wide, clickHandler }) => (
+const CalcButton = ({
+  name, color, wide, clickHandler,
+}) => (
   <button
     style={{ width: wide ? '50%' : '25%', backgroundColor: color }}
     className="Button"
-    onClick={()=>{clickHandler(name)}}
+    onClick={() => { clickHandler(name); }}
     type="submit"
   >
     {name}
@@ -21,7 +23,6 @@ CalcButton.propTypes = {
 };
 
 CalcButton.defaultProps = {
-  name: '0',
   color: '#F5923E',
   wide: false,
 };
