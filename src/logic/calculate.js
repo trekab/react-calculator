@@ -11,7 +11,9 @@ const calculate = (data, buttonName) => {
       break;
     case '+/-':
       operation = '*';
-      total = operate(parseFloat(total, 10), -1, operation);
+      if(total){
+        total = operate(parseFloat(total, 10), -1, operation);
+      }
       break;
     case '/':
     case '+':
@@ -55,15 +57,18 @@ const calculate = (data, buttonName) => {
     case '7':
     case '8':
     case '9':
-    case '.':
-      if (total && total !== '0' && total !== 'Error'){
+      if (total){
         total += buttonName;
       } else {
         total = buttonName;
       } 
       break;
+    case '.':
+      if (total && !total.includes('.')){
+        total += buttonName;
+      }
+      break;
     default:
-      total = 'Invalid';
       break;
   }
 

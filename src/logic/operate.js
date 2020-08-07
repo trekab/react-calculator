@@ -1,7 +1,7 @@
 import Big from 'big.js';
 
 const operate = (numberOne, numberTwo, operation) => {
-  let result = '';
+  let result = null;
   const firstNumber = new Big(numberOne);
   const secondNumber = new Big(numberTwo);
 
@@ -26,7 +26,7 @@ const operate = (numberOne, numberTwo, operation) => {
       result = (firstNumber.mod(secondNumber)).toString();
       break;
     default:
-      result = `Invalid operation: ${operation}`;
+      break;
   }
   return result;
 };
