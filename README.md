@@ -2,7 +2,6 @@
 
 > This is a simple calculator for Math-magicians Inc(a fictional company) using `create-react-app`.
 
-__N.B:__ This is the first milestone of the app an therefore it only includes the app's setup.
 
 ## Built With
 
