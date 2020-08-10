@@ -2,7 +2,7 @@
 
 > This is a simple calculator for Math-magicians Inc(a fictional company) using `create-react-app`.
 
-
+![Screenshot](./react-calculator.png)
 ## Built With
 
 - JavaScript
