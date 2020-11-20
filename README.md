@@ -10,7 +10,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://zen-kirch-2f8f0d.netlify.app/)
+[Live Demo Link](trekabs-react-calculator.netlify.app)
 
 
 ## Getting Started
