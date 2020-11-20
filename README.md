@@ -10,7 +10,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://trekabs-react-calculator.herokuapp.com/)
+[Live Demo Link](https://zen-kirch-2f8f0d.netlify.app/)
 
 
 ## Getting Started
