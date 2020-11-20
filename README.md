@@ -10,7 +10,7 @@
 
 ## Live Demo
 
-[Live Demo Link](trekabs-react-calculator.netlify.app)
+[Live Demo Link](https://trekabs-react-calculator.netlify.app/)
 
 
 ## Getting Started
