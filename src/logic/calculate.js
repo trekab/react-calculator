@@ -1,83 +1,55 @@
 import operate from './operate';
 
-const calculate = (data, buttonName) => {
-  let { total, next, operation } = data;
+const calculate = (data, btnName) => {
+  const { total, next, operation, tempOp } = data;
 
-  switch (buttonName) {
+  switch (btnName) {
     case 'AC':
-      total = null;
-      next = null;
-      operation = null;
-      break;
+      return {
+        total: null,
+        next: null,
+        operation: null,
+        tempOp: false,
+      };
     case '+/-':
-      operation = '*';
-      if (total) {
-        total = operate(parseFloat(total, 10), -1, operation);
-      }
-      break;
-    case '%':
-      operation = '/';
-      if (total) {
-        total = operate(parseFloat(total, 10), 100, operation);
-      }
-      break;
-    case '/':
+      if (next) return { total, next: next * -1, operation, tempOp: false };
+      return { total: total * -1, next, operation: null, tempOp: false };
     case '+':
-    case '*':
     case '-':
-      if (total) {
-        if (next && operation) {
-          next = operate(parseFloat(next), parseFloat(total), operation);
-          total = null;
-        }
-        next = total;
-        total = null;
-        operation = buttonName;
-      } else {
-        total = null;
-        operation = buttonName;
+    case '/':
+    case '*':
+    case '%':
+      if (next && operation) {
+        return {
+          total: operate(total, next, operation),
+          next: null,
+          operation: btnName,
+          tempOp: false,
+        };
       }
-      break;
+      return { total, next: null, operation: btnName, tempOp: false };
     case '=':
-      if (!total) {
-        total = next;
-        next = null;
-        operation = buttonName;
-      } else if (!next) {
-        next = null;
-        operation = buttonName;
-      } else {
-        total = operate(parseFloat(next), total, operation);
-        next = null;
-        operation = null;
-      }
-      break;
-    case '0':
-    case '1':
-    case '2':
-    case '3':
-    case '4':
-    case '5':
-    case '6':
-    case '7':
-    case '8':
-    case '9':
-      if (total) {
-        total += buttonName;
-      } else {
-        total = buttonName;
-      }
-      break;
+      if (operation)
+        return {
+          total: operate(total, next, operation),
+          next: null,
+          operation: null,
+          tempOp: true,
+        };
+      return { total, next: null, operation: null, tempOp: true };
     case '.':
-      if (total && !total.includes('.')) {
-        total += buttonName;
+      if (next) {
+        return { total, next: `${next}.`, operation, tempOp: false };
       }
-      break;
+      if (total) {
+        return { total: `${total}.`, next, operation, tempOp: false };
+      }
+      return { total: '0.', next, operation };
     default:
-      break;
+      if (operation) return { total, next: next ? next + btnName : btnName, operation };
+      if (tempOp) return { total: btnName, next, operation, tempOp: true };
+      return { total: total ? total + btnName : btnName, next, operation };
   }
-
-  return { total, next, operation };
 };
 
 export default calculate;
