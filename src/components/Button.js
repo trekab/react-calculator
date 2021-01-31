@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import '../css/Button.css';
 
 const CalcButton = ({
-  name, color, wide, clickHandler, textColor,
+  name, color, wide, clickHandler, textColor, fontSize,
 }) => (
   <button
     style={{ width: wide ? '50%' : '25%', backgroundColor: color, color: textColor }}
