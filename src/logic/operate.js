@@ -17,6 +17,9 @@ const operate = (numberOne, numberTwo, operation) => {
       } else {
         return (firstNumber.div(secondNumber)).toString();
       }
+    case '%':
+      if (secondNumber.eq(0)) return '0';
+      return firstNumber.mod(secondNumber).toString();
     default:
       return 0;
   }
