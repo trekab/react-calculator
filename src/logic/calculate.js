@@ -19,15 +19,8 @@ const calculate = (data, btnName) => {
     case '÷':
     case '×':
     case '%':
-      if (next && operation) {
-        return {
-          total: operate(total, next, operation),
-          next: null,
-          operation: btnName,
-          tempOp: false,
-        };
-      }
-      return { total, next: null, operation: btnName, tempOp: false };
+      if (next) return { total, next: next / 100, operation, tempOp: false };
+      return { total: total / 100, next, operation: null, tempOp: false };
     case '=':
       if (operation)
         return {
