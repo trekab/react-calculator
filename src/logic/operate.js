@@ -12,10 +12,10 @@ const operate = (numberOne, numberTwo, operation) => {
     case '-':
       result = (firstNumber.minus(secondNumber)).toString();
       break;
-    case '*':
+    case '×':
       result = (firstNumber.times(secondNumber)).toString();
       break;
-    case '/':
+    case '÷':
       if (numberTwo === '0') {
         result = 'Division by zero is not possible.';
       } else {
