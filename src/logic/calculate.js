@@ -16,8 +16,8 @@ const calculate = (data, btnName) => {
       return { total: total * -1, next, operation: null, tempOp: false };
     case '+':
     case '-':
-    case '/':
-    case '*':
+    case '÷':
+    case '×':
     case '%':
       if (next && operation) {
         return {
