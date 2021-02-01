@@ -47,7 +47,7 @@ const calculate = (data, btnName) => {
       return { total: '0.', next, operation };
     default:
       if (operation) return { total, next: next ? next + btnName : btnName, operation };
-      if (tempOp) return { total: btnName, next, operation, tempOp: true };
+      if (tempOp) return { total: btnName, next, operation, tempOp: false };
       return { total: total ? total + btnName : btnName, next, operation };
   }
 };
