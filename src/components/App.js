@@ -22,11 +22,11 @@ class App extends Component {
     const { total, next } = this.state;
     let result = next ? next : total;
     if(!total){
-      result = '0';
+      result = 0;
     }
     return (
       <div className="App">
-        <Display result={result} />
+        <Display result={`${result}`} />
         <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
